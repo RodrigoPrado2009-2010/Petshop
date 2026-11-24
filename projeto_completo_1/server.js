@@ -19,11 +19,10 @@ const ssl = process.env.DB_SSL_CA
         rejectUnauthorized: true
     }
     : { rejectUnauthorized: true };
- 
 const db = new Pool({
-    host: process.env.HOST,
-    port: Number(process.env.PORT),
-    user: process.env.USER,
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     ssl: ssl,
